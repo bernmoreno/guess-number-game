@@ -1,63 +1,78 @@
 # Guess Number Game
 
-A React + Vite number guessing game.
+A React + Vite browser game where the player guesses a hidden number from 1 to 100, tracks recent guesses, and tries to beat their best score.
 
-## 1) Run locally (development)
+## Features
 
-From the project folder:
+- Random number game from 1 to 100
+- High and low hints after each guess
+- "Getting warmer" feedback based on distance
+- Attempt counter and best score tracker
+- Recent guess history
+- GitHub Pages deployment workflow
 
-- Install dependencies: `npm install`
-- Start dev server: `npm run dev`
-- Open in browser: `http://localhost:5173/`
+## Run Locally
 
-The app will auto-reload when you save changes.
+1. Open a terminal in this project folder.
+2. Install dependencies:
 
-## 2) Create production files
+```bash
+npm install
+```
 
-- Build optimized production files: `npm run build`
+3. Start the development server:
 
-This creates a `dist/` folder containing files ready to deploy.
+```bash
+npm run dev
+```
 
-## 3) Preview production build in browser
+4. Open the local app in your browser:
 
-- Run preview server: `npm run preview`
-- Open the URL shown in terminal (usually `http://localhost:4173/`)
+```text
+http://localhost:5173
+```
 
-Use this to test the production build before deployment.
+## Build For Production
 
-## 4) Add app to your website
+1. Create the production build:
 
-### Option A: Host in a subfolder (recommended)
+```bash
+npm run build
+```
 
-If your website URL should be:
+2. Preview the production build locally:
 
-- `https://yourdomain.com/guess-game/`
+```bash
+npm run preview
+```
 
-Then set `base` in `vite.config.js` to:
+3. Open the preview URL shown in the terminal. Vite usually serves preview at:
 
-- `/guess-game/`
+```text
+http://localhost:4173
+```
 
-After changing base:
+## Deploy To GitHub Pages
 
-1. Run `npm run build` again.
-2. Upload the contents of `dist/` to your website folder for `guess-game`.
-3. Add a link from your website to `/guess-game/`.
+1. Push the project to the `main` branch on GitHub.
+2. Open the repository on GitHub.
+3. Go to `Settings` -> `Pages`.
+4. Under `Build and deployment`, set `Source` to `GitHub Actions`.
+5. Wait for the workflow in `.github/workflows/deploy.yml` to finish.
+6. Open the live site:
 
-### Option B: Host at domain root
+```text
+https://bernmoreno.github.io/guess-number-game/
+```
 
-If this app is your full site at `https://yourdomain.com/`, set base to `/` in `vite.config.js`, build, and upload `dist/` to your root hosting directory.
+## Project Scripts
 
-## 5) Deployment checklist
+- `npm run dev` starts the local Vite dev server
+- `npm run build` creates the production build in `dist`
+- `npm run preview` serves the production build locally
+- `npm run lint` runs ESLint
 
-- [ ] `npm run build` completes without errors
-- [ ] `dist/` folder uploaded to host
-- [ ] Correct `base` path in `vite.config.js`
-- [ ] App opens in browser without blank page or missing CSS/JS
-- [ ] Refreshing the page still works
+## Notes
 
-## Project scripts
-
-- `npm run dev` → start development server
-- `npm run build` → create production build in `dist/`
-- `npm run preview` → preview production build locally
-- `npm run lint` → run ESLint
+- The Vite `base` path is set for the GitHub repository name so the app works on GitHub Pages.
+- The live URL will not work until the GitHub Pages workflow succeeds.
